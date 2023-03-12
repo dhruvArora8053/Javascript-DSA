@@ -2,7 +2,7 @@
 
 //This function will print the numbers from n numbers to 1 using recursion:-
 const countDown = function (num) {
-  //condition
+  //base condition
   if (num <= 0) {
     console.log("All Done!");
     return;
@@ -17,5 +17,4 @@ const countDown = function (num) {
   countDown(num);
 };
 
-countDown(5); 
-
+countDown(5);
