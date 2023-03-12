@@ -1,1 +1,13 @@
-'use strict';
+"use strict";
+
+const countDown = function (num) {
+  if (num <= 0) {
+    console.log("All Done!");
+    return;
+  }
+  console.log(num);
+  num--;
+  countDown(num);
+};
+
+countDown(5);
