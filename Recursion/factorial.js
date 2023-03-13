@@ -9,4 +9,4 @@ const factorial = function (num) {
   return num * factorial(num - 1);
 };
 
-console.log(factorial(5));
+console.log(factorial(1));

@@ -10,3 +10,4 @@ const sumRange = function (num) {
 };
 
 console.log(sumRange(5));
+
