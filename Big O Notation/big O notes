@@ -1,0 +1,37 @@
+Why we use Big O Notation?
+1. compare algorithms
+2. problem with time
+3. what is a need of the product
+
+Why it's matter to come up with the best solution?
+1. large database
+2. for better product 
+
+What is a tradeoff between solutions?
+1. what we need right now for our product
+
+What is problem with time?
+1. not precise
+2. processor incorrection
+3. different results
+
+What is number of operations?
+1. constant operations+ n no. of operations
+
+Why we only focus on n(the big picture)/ Simplifying Big 
+O Expression?
+1. the big picture
+2. constant doesn't matters.
+
+What is a Big O?
+1. relation between runtime and input
+
+What is space complexity?
+1. relation between space taking and input
+
+What is logarithm?
+1. how many times we should divide the number by 2 until it
+gets less than or equal to one
+
+When arrays are slow?
+1. shift() and unshift()
