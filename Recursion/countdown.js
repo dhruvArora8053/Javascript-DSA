@@ -13,7 +13,7 @@ const countDown = function (num) {
   //different inputs
   num--;
 
-  //again called
+  //called again
   countDown(num);
 };
 
