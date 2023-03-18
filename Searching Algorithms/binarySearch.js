@@ -19,4 +19,4 @@ const binarySearch = function (arr, val) {
   return -1;
 };
 
-console.log(binarySearch([12, 34, 56, 68, 90, 91, 94, 96, 100], 94));
+console.log(binarySearch([12, 34, 56, 68, 90, 91, 94, 96, 100], 68));
