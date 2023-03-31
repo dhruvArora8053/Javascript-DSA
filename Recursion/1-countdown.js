@@ -18,3 +18,19 @@ const countDown = function (num) {
 };
 
 countDown(5);
+
+const countDown1 = function (n) {
+  //1.Base Condition
+  if (n === 0) {
+    console.log("All Done");
+    return;
+  }
+  //2.Action
+  console.log(n);
+  //3.Different Input
+  n--;
+  //4.Call Again
+  countDown1(n);
+};
+
+countDown1(5);
