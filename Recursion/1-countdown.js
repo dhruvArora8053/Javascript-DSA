@@ -1,39 +1,21 @@
 "use strict";
 
 //This function will print the numbers from n numbers to 1 using recursion:-
-// const countDown = function (num) {
-//   //base condition
-//   if (num <= 0) {
-//     console.log("All Done!");
-//     return;
-//   }
-//   //action
-//   console.log(num);
-
-//   //different inputs
-//   num--;
-
-//   //called again
-//   countDown(num);
-// };
-
-// countDown(5);
-
-//This function will print the numbers from n numbers to 1 using recursion:-
-const countDown = function (n) {
+const countDown = function (num) {
   //base condition
-  if (n === 0) {
+  if (num <= 0) {
+    console.log("All Done!");
     return;
   }
-
   //action
-  console.log(n);
+  console.log(num);
 
-  //different input
-  --n;
+  //different inputs
+  num--;
 
-  //call again
-  countDown(n);
+  //called again
+  countDown(num);
 };
 
 countDown(5);
+
