@@ -22,6 +22,8 @@ const collectOddValues = function (arr) {
 console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
 //reference
+//newArr= 1.concat([].cocat)(3.concat)([].concat)(5.concat)([])
+
 const a = [];
 const b = [1, 2];
 const c = [];
