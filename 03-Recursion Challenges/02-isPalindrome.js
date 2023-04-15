@@ -24,3 +24,11 @@ const palindrome = function (str) {
   }
 };
 
+palindrome("arora");
+palindrome("pullup");
+palindrome("Repaper");
+palindrome("asdfljld");
+console.log(palindrome("1"));
+palindrome("ll");
+palindrome("lb");
+palindrome("oro");
