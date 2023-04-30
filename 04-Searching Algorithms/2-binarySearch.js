@@ -27,16 +27,18 @@ const binarySearch = function (arr, target) {
   let end = arr.length - 1;
 
   while (start <= end) {
-    mid = Math.floor((start + end) / 2);
+    const mid = Math.round((start + end) / 2);
 
     if (arr[mid] === target) {
       return mid;
-    } else if (target < arr[mid]) {
+    } else if (arr[start] < target) {
+      start = start + 1;
+    } else {
       end = end - 1;
-    } else start = start + 1;
+    }
   }
 
   return -1;
 };
 
-console.log(binarySearch([12, 34, 56, 68, 90, 91, 94, 96, 100], 100));
+console.log(binarySearch([12, 34, 56, 68, 90, 91, 94, 96, 100], 1000));
