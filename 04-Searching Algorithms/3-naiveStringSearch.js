@@ -1,27 +1,23 @@
 "use strict";
 
-const stringSearch = function (string, subString) {
-  let i = 0;
-  let j = subString.length;
-  let count = 0;
+//Write a program to find number of string patterns inside a string and return counted patterns:
 
-  while (j < string.length) {
-    if (string.slice(i, j) === subString) {
+const naiveStringSearch = function (string, pattern) {
+  let count = 0;
+  let a = 0;
+  let b = 3;
+
+  while (b <= string.length) {
+    if (string.slice(a, b) === pattern) {
       count++;
     }
-    i++;
-    j++;
+    a++;
+    b++;
   }
   return count;
 };
 
-console.log(stringSearch("wowomgzomg", "omg"));
+console.log(naiveStringSearch("womgwomgzomgomg", "omg"));
+console.log(naiveStringSearch("lsdafjdflsakaakaakadfsakadflaka", "aka"));
 
-let a = "wowomgzomg";
-let b = "omg";
-
-console.log(a.slice(0, 3));
-
-if (a.slice(0, 3) === b) {
-  console.log(true);
-} else console.log(false);
+// console.log('lsdfk'.slice(0,3));
