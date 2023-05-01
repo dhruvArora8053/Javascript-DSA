@@ -16,3 +16,7 @@ const bubbleSort = function (arr) {
 
 console.log(bubbleSort([37, 45, 29, 8]));
 console.log(bubbleSort([1, 37, 44, 21, 4, 3, 15, 7]));
+
+//another loops could be
+// for(let i = arr.length; i > 0; i--)
+// for(let j = 0; j < i-1; j++)
