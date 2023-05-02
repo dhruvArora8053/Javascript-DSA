@@ -36,3 +36,8 @@ console.log(bubbleSort([8, 1, 2, 3, 4, 5, 6, 7]));
 //another loops could be
 // for(let i = arr.length; i > 0; i--)
 // for(let j = 0; j < i-1; j++)
+
+//Big O:- Worst: n**2, best: n
+
+//Use Cases:-
+//When your data is nearly sorted then it could be a good candidate
