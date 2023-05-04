@@ -20,21 +20,8 @@ const countDown = function (num) {
 countDown(5);
 
 //base condition
-//action
+//action                   --> badc
 //different input
 //call again
 
-const countDown1 = function (n) {
-  //base condition
-  if (n === 0) {
-    return;
-  }
 
-  //action
-  console.log(n);
-
-  //different input + action
-  countDown1(--n);
-};
-
-countDown1(5);
