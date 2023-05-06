@@ -67,3 +67,4 @@ console.log(insertionSort([2, 1, 9, 76, 4]));
 // console.log(insertionSort([1, 37, 44, 21, 4, 3, 15, 7]));
 // console.log(insertionSort([8, 1, 2, 3, 4, 5, 6, 7]));
 // console.log(insertionSort([-8, 1, 2, -3, 4, -5, 6, 7]));
+
