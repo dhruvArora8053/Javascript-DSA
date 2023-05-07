@@ -2,10 +2,13 @@
 
 const insertionSort = function (arr) {
   for (let i = 1; i < arr.length; i++) {
-    if (arr[i - 1] > arr[i]) {
+    if (arr[0] > arr[i]) {
       const temp = arr[i - 1];
       arr[i - 1] = arr[i];
       arr[i] = temp;
+    }
+    for(let j=i+1; i<arr.length; j++){
+
     }
   }
 };
