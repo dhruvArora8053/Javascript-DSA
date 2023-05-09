@@ -2,8 +2,8 @@
 
 const mergeSort = function (arr1, arr2) {
   let newArr = [];
-  let i,
-    j = 0;
+  let i = 0;
+  let j = 0;
   while (i < arr1.length && j < arr2.length) {
     while (arr1[i] > arr2[j]) {
       newArr.push(arr2[j]);
@@ -33,3 +33,6 @@ const mergeSort = function (arr1, arr2) {
 };
 
 console.log(mergeSort([1, 10, 50], [2, 14, 99, 100]));
+console.log(
+  mergeSort([-10, -7, -5, 10, 20, 100, 102], [-96, 2, 14, 51, 99, 100])
+);
