@@ -18,23 +18,17 @@ class Node {
 // console.log(first);
 
 class SinglyLinkedList {
-  constructor(length) {
+  constructor() {
     this.head = null;
     this.tail = null;
-    this.length = length;
+    this.length = 0;
   }
 
-  push(val) {
-    let i = 0;
-    this.head = val;
-    this.tail = new SinglyLinkedList(i++);
-    this.length = i + 1;
-  }
+  push(val) {}
 }
 
 const list = new SinglyLinkedList();
 list.push("HELLO");
 list.push("GOODBYE");
-list.push("how");
 
 console.log(list);
