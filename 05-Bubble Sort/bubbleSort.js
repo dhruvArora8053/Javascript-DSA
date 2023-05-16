@@ -43,9 +43,7 @@ console.log(bubbleSort([1, 2, 3, 4, 5, 6, 7]));
 //Use Cases:-
 //When your data is nearly sorted then it could be a good candidate
 
-// const swap = function (arr, a, b) {
-//   return ([arr[a], arr[b]] = [arr[b], arr[a]]);
-// };
+//My Bubble Sort:-
 
 const swap = function (arr, a, b) {
   return ([arr[a], arr[b]] = [arr[b], arr[a]]);
