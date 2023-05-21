@@ -6,7 +6,7 @@
 class Node {
   constructor(val) {
     this.val = val;
-    this.next = next;
+    this.next = null;
   }
 }
 
@@ -18,8 +18,31 @@ class SinglyLinkedList {
   }
 
   push(val) {
-    
+    const newNode = new Node(val);
+
+    //for empty
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    }
+
+    //for non-empty
+    else {
+      this.head.next = newNode;
+      this.tail = newNode;
+    }
+
+    this.length++;
+    return this;
   }
 }
 
 const list = new SinglyLinkedList();
+list.push("Hi");
+list.push("You");
+// list.push(99);
+
+console.log(list);
+console.log(list.head);
+console.log(list.head.next);
+console.log(list.head.next.next);
