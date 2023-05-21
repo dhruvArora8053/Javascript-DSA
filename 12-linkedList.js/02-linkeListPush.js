@@ -28,19 +28,28 @@ class SinglyLinkedList {
 
     //for non-empty
     else {
-      this.head.next = newNode;
+      this.tail.next = newNode;
       this.tail = newNode;
     }
 
     this.length++;
     return this;
   }
+
+  traverse() {
+    let current = this.head;
+
+    while (current) {
+      console.log(current.val);
+      current = current.next;
+    }
+  }
 }
 
 const list = new SinglyLinkedList();
 list.push("Hi");
 list.push("You");
-// list.push(99);
+list.push(99);
 
 console.log(list);
 console.log(list.head);
