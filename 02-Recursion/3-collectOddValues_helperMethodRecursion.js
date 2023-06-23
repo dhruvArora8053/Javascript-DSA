@@ -27,27 +27,5 @@ function collectOddValues(arr) {
 
 console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
-const collectOddValues1 = function (arr) {
-  let newArr = [];
-
-  const helperMethod = function (arr,oddArr) {
-    //base condition
-    if (arr.length === 0) {
-      return;
-    }
-
-    //action
-    if (arr[0] % 2 !== 0) {
-      newArr.push(arr[0]);
-    }
-
-    //different input+ call again
-    helperMethod(arr.slice(1));
-  };
-
-  helperMethod(arr,newArr);
-
-  return newArr;
-};
-
-console.log(collectOddValues1([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+//advantage-
+//the result arr will not be decalred every time we call the funciton.
