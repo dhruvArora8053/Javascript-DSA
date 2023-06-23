@@ -72,3 +72,4 @@ console.log(bubbleSort1([37, 45, 29, 8]));
 console.log(bubbleSort1([1, 37, 44, 21, 4, 3, 15, 7]));
 console.log(bubbleSort1([8, 1, 2, 3, 4, 5, 6, 7]));
 console.log(bubbleSort1([1, 2, 3, 4, 5, 6, 7]));
+
