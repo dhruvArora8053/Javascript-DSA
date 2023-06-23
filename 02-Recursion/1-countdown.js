@@ -19,9 +19,25 @@ const countDown = function (num) {
 
 countDown(5);
 
-//base condition
-//action                   --> badc
-//different input
-//call again
+// //base condition
+// //action                   --> badc
+// //different input
+// //call again
 
+const countDown = function (n) {
+  //base condition
+  if (n === 0) {
+    return;
+  }
 
+  //action
+  console.log(n);
+
+  //different input
+  n = n - 1;
+
+  //call again
+  countDown(n);
+};
+
+countDown(5);
