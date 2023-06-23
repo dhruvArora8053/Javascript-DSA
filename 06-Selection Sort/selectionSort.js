@@ -28,22 +28,21 @@ console.log(selectionSort([-8, 1, 2, -3, 4, -5, 6, 7]));
 //space complexity - O(1)
 
 //My Selection Sort:-
-
 const selectionSort1 = function (arr) {
   for (let i = 0; i < arr.length - 1; i++) {
     let min = i;
     for (let j = i + 1; j < arr.length; j++) {
-      if (arr[min] > arr[j]) {
+      if (arr[j] < arr[min]) {
         min = j;
       }
     }
     if (min !== i) {
-      let temp = arr[min];
-      arr[min] = arr[i];
-      arr[i] = temp;
+      let temp = arr[i];
+      arr[i] = arr[min];
+      arr[min] = temp;
+      break;
     }
   }
-
   return arr;
 };
 
