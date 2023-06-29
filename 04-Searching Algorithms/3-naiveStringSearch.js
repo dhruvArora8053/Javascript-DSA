@@ -46,3 +46,22 @@ console.log(naiveStringSearch1("lsdafjdflsakaakaakadfsakadflaka", "aka"));
 console.log(naiveStringSearch1("lorie loled", "lol"));
 console.log(naiveStringSearch1("lorie loled", "lo"));
 console.log(naiveStringSearch1("lorie loled", "pop"));
+
+console.log("-------------------------------");
+
+//Solution 3:-
+const naiveStringSearch2 = function (str, pattern) {
+  let count = 0;
+  for (let i = 0; i <= str.length - pattern.length; i++) {
+    if (str.slice(i, pattern.length + i) === pattern) {
+      count++;
+    }
+  }
+  return count;
+};
+
+console.log(naiveStringSearch2("womgwomgzomgomg", "omg"));
+console.log(naiveStringSearch2("lsdafjdflsakaakaakadfsakadflaka", "aka"));
+console.log(naiveStringSearch2("lorie loled", "lol"));
+console.log(naiveStringSearch2("lorie loled", "lo"));
+console.log(naiveStringSearch2("lorie loled", "pop"));
