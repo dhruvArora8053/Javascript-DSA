@@ -22,6 +22,13 @@ const binarySearch = function (arr, val) {
 
 console.log(binarySearch([12, 34, 56, 68, 90, 91, 94, 96, 100], 68));
 
+//points:-
+// while(start<=end)
+//a. if element is greater than arr[mid] than start will go above than mid
+//b. start cannot go far than end because end is really the end of array
+//c. and if start is trying to go beyond end which means the element is greater and it is not in the array
+//d. same for the end
+
 const binarySearch1 = function (arr, item) {
   let start = 0;
   let end = arr.length - 1;
