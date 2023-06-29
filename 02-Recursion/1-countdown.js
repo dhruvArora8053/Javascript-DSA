@@ -24,3 +24,21 @@ countDown(5);
 // //different input
 // //call again
 
+const countDown1 = function (n) {
+  //base condition
+  if (n === 0) {
+    return;
+  }
+
+  //action
+  console.log(n);
+
+  //different input
+  n--;
+
+  //call again
+  countDown1(n);
+};
+
+countDown1(5);
+
