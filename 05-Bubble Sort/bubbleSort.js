@@ -43,3 +43,28 @@ console.log(bubbleSort([-8, 1, 2, -3, 4, -5, 6, 7]));
 
 //Use Cases:-
 //When your data is nearly sorted then it could be a good candidate
+
+const bubbleSort1 = function (arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    let noswap = true;
+    for (let j = 0; j < arr.length - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+
+        noswap = false;
+      }
+    }
+    if (noswap) {
+      return arr;
+    }
+  }
+  return arr;
+};
+
+console.log(bubbleSort1([37, 45, 29, 8]));
+console.log(bubbleSort1([1, 37, 44, 21, 4, 3, 15, 7]));
+console.log(bubbleSort1([8, 1, 2, 3, 4, 5, 6, 7]));
+console.log(bubbleSort1([1, 2, 3, 4, 5, 6, 7]));
+console.log(bubbleSort1([-8, 1, 2, -3, 4, -5, 6, 7]));
