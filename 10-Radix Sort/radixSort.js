@@ -2,11 +2,14 @@ const getDigit = function (num, pos) {
   return +String(Math.abs(num))
     .split("")
     .reverse()
-    .slice(pos, pos + 1)
-    .join("");
+    .slice(pos, pos + 1);
 };
 
-console.log(getDigit(12345, 0));
+// const getDigit = function (num, pos) {
+//   return +String(Math.abs(num)).split("").reverse()[pos];
+// };
+
+console.log(getDigit(-12345, 0));
 console.log(getDigit(12345, 1));
 console.log(getDigit(12345, 2));
 console.log(getDigit(12345, 3));
@@ -26,7 +29,7 @@ const digitCount = function (num) {
 console.log(digitCount(1));
 console.log(digitCount(25));
 console.log(digitCount(314));
-console.log('--------------------------');
+console.log("--------------------------");
 
 const mostDigits = function (arr) {
   let max = digitCount(arr[0]);
@@ -40,5 +43,5 @@ const mostDigits = function (arr) {
 };
 
 console.log(mostDigits([1234, 56, 7]));
-console.log(mostDigits([1, 1, 1111, 1]));
+console.log(mostDigits([1, 1, 11111, 1]));
 console.log(mostDigits([12, 34, 56, 78]));
