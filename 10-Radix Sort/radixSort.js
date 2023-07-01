@@ -87,3 +87,31 @@ console.log(radixSort([8, 1, 2, 3, 4, 5, 6, 7]));
 console.log(radixSort([-8, 1, 2, -3, 4, -5, 6, 7]));
 console.log(radixSort([23, 345, 5476, 12, 2345, 9852]));
 console.log(radixSort([-23, -333, -400, 12, 1, 2, 3, 44, -233]));
+
+//Big O:-
+//Worst --> O(nk)
+//Avg   --> O(nk)
+//Best  --> O(nk)
+
+console.log("----------------------------------");
+
+const radixSort1 = function (arr) {
+  const maxDigitCount = mostDigits(arr);
+  for (let k = 0; k < maxDigitCount; k++) {
+    let container = Array.from({ length: 10 }, () => []);
+    for (let i = 0; i < arr.length; i++) {
+      container[getDigit(arr[i], k)].push(arr[i]);
+    }
+    arr = [].concat(...container);
+  }
+  return arr;
+};
+
+console.log(radixSort1([2, 1, 9, 76, 4]));
+console.log(radixSort1([42, 33, 11]));
+console.log(radixSort1([37, 45, 29, 8]));
+console.log(radixSort1([1, 37, 44, 21, 4, 3, 15, 7]));
+console.log(radixSort1([8, 1, 2, 3, 4, 5, 6, 7]));
+console.log(radixSort1([-8, 1, 2, -3, 4, -5, 6, 7]));
+console.log(radixSort1([23, 345, 5476, 12, 2345, 9852]));
+console.log(radixSort1([-23, -333, -400, 12, 1, 2, 3, 44, -233]));
