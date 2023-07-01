@@ -29,6 +29,31 @@ class SinglyLinkedList {
     this.length += 1;
     return this;
   }
+
+  traverse() {
+    let current = this.head;
+    while (current) {
+      console.log(current.val);
+      current = current.next;
+    }
+  }
+
+  pop() {
+    if (!this.head) {
+      return undefined;
+    }
+
+    let temp = this.head;
+    let prev = this.head;
+    while (temp !== null) {               
+      prev = temp;
+      temp = temp.next;
+    }
+
+    prev.next = null;
+    console.log(prev);
+    return temp;
+  }
 }
 
 const list = new SinglyLinkedList();
@@ -39,9 +64,13 @@ list.push("Goodbye");
 list.push(99);
 console.log(list.head.next.next);
 
+list.traverse();
+
 // let first = new Node("HI");
 // first.next = new Node("there");
 // first.next.next = new Node("how");
 // first.next.next.next = new Node("are");
 // first.next.next.next.next = new Node("you");
 // console.log(first);
+
+console.log(list.pop());
