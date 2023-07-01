@@ -1,0 +1,30 @@
+"use strict";
+
+const swap = function (array, i, j) {
+  var temp = array[i];
+  array[i] = array[j];
+  array[j] = temp;
+};
+
+const pivot = function (arr, start = 0, end = arr.lenght - 1) {
+  var pivot = arr[start];
+  var swapIdx = start;
+
+  for (var i = start + 1; i < arr.length; i++) {
+    if (pivot > arr[i]) {
+      swapIdx++;
+      swap(arr, swapIdx, i);
+    }
+  }
+  swap(arr, start, swapIdx);
+  return swapIdx;
+};
+
+console.log(pivot([9, 2, 1, 76, 4]));
+console.log(pivot([42, 33, 11]));
+console.log(pivot([37, 45, 29, 8]));
+console.log(pivot([1, 37, 44, 21, 4, 3, 15, 7]));
+console.log(pivot([8, 1, 2, 3, 4, 5, 6, 7]));
+console.log(pivot([-8, 1, 2, -3, 4, -5, 6, 7]));
+console.log(pivot([23, 2, 1, 9, 17, 345, 8, 12, 14, 5476, 2345, 9852]));
+console.log(pivot([-23, -333, -400, 12, 1, 2, 3, 44, -233]));
