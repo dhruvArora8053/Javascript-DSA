@@ -43,13 +43,42 @@ class SinglyLinkedList {
       current = current.next;
     }
   }
+
+  pop() {
+    if (!this.head) {
+      return undefined;
+    }
+
+    let temp = this.head;
+    let prev = this.head;
+    while (temp.next) {
+      prev = temp;
+      temp = temp.next;
+    }
+
+    this.tail = prev;
+    this.tail.next = null;
+    this.length -= 1;
+    return temp;
+  }
 }
 
 const list = new SinglyLinkedList();
-list.push("Hi");
-list.push("You");
-list.push(99);
+list.push("Hello");
+console.log(list);
 
-// console.log(list.pop());
+list.push("Goodbye").push(99);
+console.log(list.head.next.next);
 
-// list.pop();
+list.traverse();
+
+console.log(list.pop());
+console.log(list);
+
+console.log(list.pop());
+console.log(list);
+
+list.push(999);
+console.log(list);
+
+console.log("-----------------------------");

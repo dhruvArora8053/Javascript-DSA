@@ -57,7 +57,8 @@ class SinglyLinkedList {
       temp = temp.next;
     }
 
-    prev.next = null;
+    this.tail = prev;
+    this.tail.next = null;
     this.length -= 1;
     return temp;
   }
@@ -74,6 +75,12 @@ console.log(list.head.next.next);
 list.traverse();
 
 console.log(list.pop());
+console.log(list);
+
+console.log(list.pop());
+console.log(list);
+
+list.push(999);
 console.log(list);
 
 console.log("-----------------------------");
