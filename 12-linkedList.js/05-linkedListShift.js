@@ -70,6 +70,11 @@ class SinglyLinkedList {
     const temp = this.head;
     this.head = this.head.next;
     this.length -= 1;
+
+    if (this.length === 0) {
+      this.tail = null;
+    }
+
     return temp;
   }
 }
@@ -77,6 +82,12 @@ class SinglyLinkedList {
 const list = new SinglyLinkedList();
 list.push("Hello").push("Goodbye").push(99);
 
+console.log(list.shift());
+console.log(list.shift());
+console.log(list.shift());
+console.log(list.shift());
+list.push(100).push(1000);
+console.log(list.pop());
 console.log(list.shift());
 console.log(list);
 
