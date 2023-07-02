@@ -157,16 +157,26 @@ class SinglyLinkedList {
     return true;
   }
 
-
+  remove(index) {
+    if (index < 0 || index >= this.length) {
+      return undefined;
+    } else if (index === this.length - 1) {
+      return this.pop(index);
+    } else if (index === 0) {
+      return this.shift(index);
+    } else {
+      const prev = this.get(index - 1);
+      const current = this.get(index);
+      prev.next = current.next;
+      this.length -= 1;
+      return current;
+    }
+  }
 }
 const list = new SinglyLinkedList();
 list.push("Hello").push("Goodbye").push(99);
 
-console.log(list.insert(0, 75));
-console.log(list.insert(1, 76));
-console.log(list.insert(1, 77));
-console.log(list.insert(5, 78));
-console.log(list.insert(7, 78));
-console.log(list.insert(-1, 34));
-console.log(list.insert(12, 34));
+console.log(list.remove(1));
+console.log(list.remove(0));
+console.log(list.remove(0));
 console.log(list);
