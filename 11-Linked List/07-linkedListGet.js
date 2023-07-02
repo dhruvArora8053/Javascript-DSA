@@ -120,16 +120,13 @@ class SinglyLinkedList {
     }
 
     let count = 0;
-    let move = this.head;
+    let current = this.head;
 
-    while (move) {
-      if (count === index) {
-        return move.val;
-      }
-
-      move = move.next;
+    while (count !== index) {
+      current = current.next;
       count++;
     }
+    return current.val;
   }
 }
 const list = new SinglyLinkedList();
@@ -137,5 +134,8 @@ list.push("Hello").push("Goodbye").push(99);
 
 console.log(list.length);
 console.log(list.get(1));
+
+list.push("Hey");
+console.log(list.get(3));
 
 console.log("-----------------------------");
