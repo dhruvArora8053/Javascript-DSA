@@ -3,6 +3,13 @@
 // piece of data --> val
 // reference to next node --> node
 
+// let first = new Node("HI");
+// first.next = new Node("there");
+// first.next.next = new Node("how");
+// first.next.next.next = new Node("are");
+// first.next.next.next.next = new Node("you");
+// console.log(first);
+
 class Node {
   constructor(val) {
     this.val = val;
@@ -51,7 +58,6 @@ class SinglyLinkedList {
     }
 
     prev.next = null;
-    // console.log(prev);
     this.length -= 1;
     return temp;
   }
@@ -67,12 +73,7 @@ console.log(list.head.next.next);
 
 list.traverse();
 
-// let first = new Node("HI");
-// first.next = new Node("there");
-// first.next.next = new Node("how");
-// first.next.next.next = new Node("are");
-// first.next.next.next.next = new Node("you");
-// console.log(first);
-
 console.log(list.pop());
 console.log(list);
+
+console.log("-----------------------------");
