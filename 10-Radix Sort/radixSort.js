@@ -93,6 +93,8 @@ console.log(radixSort([-23, -333, -400, 12, 1, 2, 3, 44, -233]));
 //Avg   --> O(nk)
 //Best  --> O(nk)
 
+//Note:- isn't working for negative values in the array
+
 console.log("----------------------------------");
 
 // My Solution:-
@@ -118,9 +120,44 @@ console.log(digitAt(7323, 2));
 console.log(digitAt(7323, 3));
 console.log("-----------------------------");
 
-const digitCount1= function(arr) {
-  
-}
+const digitCount1 = function (num) {
+  return String(Math.abs(num)).split("").length;
+};
+
+console.log(digitCount1(1));
+console.log(digitCount1(25));
+console.log(digitCount1(314));
+console.log("--------------------------");
+
+const maxDigitCount1 = function (arr) {
+  let maxDigits = digitCount1(arr[0]);
+
+  for (let i = 1; i < arr.length; i++) {
+    if (maxDigits < digitCount1(arr[i])) {
+      maxDigits = digitCount1(arr[i]);
+    }
+  }
+  return maxDigits;
+};
+
+console.log(mostDigits([1234, 56, 7]));
+console.log(mostDigits([1, 1, 11111, 1]));
+console.log(mostDigits([12, 34, 56, 78]));
+console.log("----------------------------");
+
+const radixSort1 = function (arr) {
+  const maxDigits = maxDigitCount1(arr);
+  // console.log(maxDigits);
+
+  for (let k = 0; k < maxDigits; k++) {
+    let container = Array.from({ length: 10 }, () => []);
+    for (let i = 0; i < arr.length; i++) {
+      container[digitAt(arr[i], k)].push(arr[i]);
+    }
+    arr = [].concat(...container);
+  }
+  return arr;
+};
 
 console.log(radixSort1([2, 1, 9, 76, 4]));
 console.log(radixSort1([42, 33, 11]));
