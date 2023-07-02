@@ -149,16 +149,19 @@ class SinglyLinkedList {
       this.unshift(val);
     } else {
       const prev = this.get(index - 1);
-      const after = this.get(index);
+      const after = prev.next;
       prev.next = newNode;
       newNode.next = after;
+      this.length += 1;
     }
-    this.length += 1;
     return true;
   }
 }
 const list = new SinglyLinkedList();
 list.push("Hello").push("Goodbye").push(99);
 
-console.log(list.insert(1, 75));
+console.log(list.insert(0, 75));
+console.log(list.insert(1, 76));
+console.log(list.insert(1, 77));
+console.log(list.insert(5, 78));
 console.log(list);
