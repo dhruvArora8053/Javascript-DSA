@@ -95,17 +95,32 @@ console.log(radixSort([-23, -333, -400, 12, 1, 2, 3, 44, -233]));
 
 console.log("----------------------------------");
 
-const radixSort1 = function (arr) {
-  const maxDigitCount = mostDigits(arr);
-  for (let k = 0; k < maxDigitCount; k++) {
-    let container = Array.from({ length: 10 }, () => []);
-    for (let i = 0; i < arr.length; i++) {
-      container[getDigit(arr[i], k)].push(arr[i]);
-    }
-    arr = [].concat(...container);
-  }
-  return arr;
+// My Solution:-
+
+const digitAt = function (num, index) {
+  return +String(Math.abs(num))
+    .split("")
+    .reverse()
+    .slice(index, index + 1)
+    .join("");
 };
+
+console.log(digitAt(-12345, 0));
+console.log(digitAt(12345, 1));
+console.log(digitAt(12345, 2));
+console.log(digitAt(12345, 3));
+console.log(digitAt(12345, 4));
+console.log(digitAt(12345, 5));
+console.log("-----------------------------");
+console.log(digitAt(7323, 0));
+console.log(digitAt(7323, 1));
+console.log(digitAt(7323, 2));
+console.log(digitAt(7323, 3));
+console.log("-----------------------------");
+
+const digitCount1= function(arr) {
+  
+}
 
 console.log(radixSort1([2, 1, 9, 76, 4]));
 console.log(radixSort1([42, 33, 11]));

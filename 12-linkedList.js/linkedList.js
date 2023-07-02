@@ -45,13 +45,14 @@ class SinglyLinkedList {
 
     let temp = this.head;
     let prev = this.head;
-    while (temp !== null) {               
+    while (temp.next) {
       prev = temp;
       temp = temp.next;
     }
 
     prev.next = null;
-    console.log(prev);
+    // console.log(prev);
+    this.length -= 1;
     return temp;
   }
 }
@@ -74,3 +75,4 @@ list.traverse();
 // console.log(first);
 
 console.log(list.pop());
+console.log(list);
