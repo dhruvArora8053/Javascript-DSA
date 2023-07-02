@@ -102,30 +102,26 @@ class SinglyLinkedList {
   }
 
   unshift(val) {
+    const newNode = new Node(val);
     if (!this.head) {
-      this.push(val);
-      return this;
+      this.head = newNode;
+      this.tail = this.head;
     } else {
-      const newNode = new Node(val);
       newNode.next = this.head;
       this.head = newNode;
-      this.length += 1;
-      return this;
     }
+    this.length += 1;
+    return this;
   }
 }
-
 const list = new SinglyLinkedList();
 list.push("Hello").push("Goodbye").push(99);
 
+console.log(list.pop());
+console.log(list.pop());
+console.log(list.pop());
+console.log(list.pop());
 console.log(list.unshift(1));
-console.log(list);
-console.log(list.pop());
-console.log(list.pop());
-console.log(list.pop());
-console.log(list.pop());
-console.log(list);
-console.log(list.unshift(22));
-console.log(list);
+console.log(list.unshift(12));
 
 console.log("-----------------------------");
