@@ -117,18 +117,35 @@ class DoublyLinkedList {
       return false;
     }
   }
+
+  insert(index, val) {
+    const newNode = new Node(val);
+
+    if (index < 0 || index > this.length) {
+      return false;
+    } else if (index === 0) {
+      this.unshift(val);
+    } else if (index === this.length) {
+      this.push(val);
+    } else {
+      const prevNode = this.get(index - 1);
+      newNode.next = prevNode.next;
+      prevNode.next.prev = newNode;
+      prevNode.next = newNode;
+      newNode.prev = prevNode;
+      this.length += 1;
+    }
+    return true;
+  }
 }
 
 const list = new DoublyLinkedList();
 list.push(12).push(24).push(36).push(48).push(60).push(72);
 console.log(list);
 
-console.log(list.set(10, 35));
-console.log(list.set(-1, 35));
-console.log(list.set(0, 5));
-console.log(list.set(1, 10));
-console.log(list.set(2, 15));
-console.log(list.set(3, 20));
-console.log(list.set(4, 25));
-console.log(list.set(5, 30));
+console.log(list.insert(-1, 24));
+console.log(list.insert(10, 24));
+list.insert(0, 21);
+list.insert(3, 20);
+list.insert(8, 23);
 console.log(list);
