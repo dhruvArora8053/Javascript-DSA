@@ -48,23 +48,33 @@ class DoublyLinkedList {
     removed.prev = null;
     return removed;
   }
+
+  shift() {
+    if (!this.head) {
+      return undefined;
+    }
+
+    let removed = this.head;
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = removed.next;
+      this.head.prev = null;
+      removed.next = null;
+    }
+    this.length -= 1;
+    return removed;
+  }
 }
 
 const list = new DoublyLinkedList();
 list.push(12).push(24).push(36).push(48);
 console.log(list);
 
-console.log(list.pop());
-console.log(list.pop());
-console.log(list.pop());
-console.log(list.pop());
-console.log(list.pop());
+console.log(list.shift());
+console.log(list.shift());
+console.log(list.shift());
+console.log(list.shift());
+console.log(list.shift());
 console.log(list);
-
-class Make {
-  constructor(name, num1, num2) {
-    this.name = name;
-    this.num1 = num1;
-    this.num2 = num2;
-  }
-}
