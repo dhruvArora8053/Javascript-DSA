@@ -124,9 +124,9 @@ class DoublyLinkedList {
     if (index < 0 || index > this.length) {
       return false;
     } else if (index === 0) {
-      return this.unshift(val);
+      return this.unshift();
     } else if (index === this.length) {
-      return this.push(val);
+      return this.push();
     } else {
       const prevNode = this.get(index - 1);
 
@@ -139,15 +139,36 @@ class DoublyLinkedList {
     }
     return true;
   }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) {
+      return undefined;
+    } else if (index === 0) {
+      return this.shift(index);
+    } else if (index === this.length - 1) {
+      return this.pop(index);
+    } else {
+      const targetNode = this.get(index);
+      const prevNode = targetNode.prev;
+
+      prevNode.next = targetNode.next;
+      targetNode.prev = prevNode;
+
+      targetNode.prev = null;
+      targetNode.next = null;
+      this.length -= 1;
+      return targetNode;
+    }
+  }
 }
 
 const list = new DoublyLinkedList();
 list.push(12).push(24).push(36).push(48).push(60).push(72);
 console.log(list);
 
-console.log(list.insert(-1, 24));
-console.log(list.insert(10, 24));
-list.insert(0, 21);
-list.insert(3, 20);
-list.insert(8, 23);
+console.log(list.remove(-1, 24));
+console.log(list.remove(10, 24));
+// list.remove(0);
+// list.remove(3);
+list.remove(5);
 console.log(list);
