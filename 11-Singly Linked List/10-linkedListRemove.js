@@ -67,24 +67,6 @@ class SinglyLinkedList {
     return temp;
   }
 
-  // pop() {
-  //   if (!this.head) return undefined;
-  //   var current = this.head;
-  //   var newTail = current;
-  //   while (current.next) {
-  //     newTail = current;
-  //     current = current.next;
-  //   }
-  //   this.tail = newTail;
-  //   this.tail.next = null;
-  //   this.length--;
-  //   if (this.length === 0) {
-  //     this.head = null;
-  //     this.tail = null;
-  //   }
-  //   return current;
-  // }
-
   shift() {
     if (!this.head) {
       return undefined;
@@ -166,10 +148,10 @@ class SinglyLinkedList {
       return this.shift(index);
     } else {
       const prev = this.get(index - 1);
-      const current = this.get(index);
-      prev.next = current.next;
+      const removed = prev.next;
+      prev.next = removed.next;
       this.length -= 1;
-      return current;
+      return removed;
     }
   }
 }
@@ -179,4 +161,5 @@ list.push("Hello").push("Goodbye").push(99);
 console.log(list.remove(1));
 console.log(list.remove(0));
 console.log(list.remove(0));
+console.log(list.remove(-1));
 console.log(list);
