@@ -30,23 +30,31 @@ class Stack {
   }
 
   pop() {
-    let current = this.first;
-
+    const temp = this.first;
     if (!this.first) {
       return undefined;
-    } else if (this.size === 1) {
+    } else if (this.first === this.last) {
       this.first = null;
       this.last = null;
     } else {
-      current.next = this.first;
-      current.next = null;
+      this.first = this.first.next;
     }
-    return --this.size;
+    this.size -= 1;
+    return temp;
   }
 }
 
 const stack = new Stack();
 stack.push(1).push(2).push(3);
+console.log(stack);
+
+console.log(stack.pop());
+console.log(stack);
+
+console.log(stack.pop());
+console.log(stack);
+
+console.log(stack.pop());
 console.log(stack);
 
 console.log(stack.pop());
