@@ -33,15 +33,14 @@ class Queue {
     if (!this.first) {
       return undefined;
     } else if (this.first === this.last) {
-      let temp = this.first;
       this.first = null;
       this.last = null;
     } else {
       this.first = this.first.next;
-      temp.next = null;
+      //   temp.next = null;
     }
     this.size -= 1;
-    return temp;
+    return temp.val;
   }
 }
 
@@ -56,3 +55,5 @@ console.log(queue.dequeue());
 console.log(queue);
 // console.log(queue.dequeue());
 // console.log(queue.dequeue());
+
+//Big O --> FIFO O(1)
