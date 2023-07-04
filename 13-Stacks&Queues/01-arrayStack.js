@@ -27,3 +27,5 @@ console.log(photoShopStack);
 // Problem with shift and unshift: re-indexing each and every element
 
 // If you want to use stack using array then use push and pop methods
+
+//Big O: big O(1) --> LIFO
