@@ -80,7 +80,10 @@ class BinarySearchTree {
     while (queue.length) {
       node = queue.shift();
       data.push(node);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
     }
+    return data;
   }
 }
 
@@ -90,10 +93,15 @@ const tree = new BinarySearchTree();
 //   5     13
 // 2  7  11  16
 
-console.log(tree.insert(10));
-console.log(tree.insert(5));
-console.log(tree.insert(13));
-console.log(tree.insert(11));
-console.log(tree.insert(2));
-console.log(tree.insert(16));
-console.log(tree.insert(7));
+tree
+  .insert(10)
+  .insert(5)
+  .insert(13)
+  .insert(11)
+  .insert(2)
+  .insert(16)
+  .insert(7)
+  .insert(3);
+console.log(tree);
+
+console.log(tree.breadthFirstSearch());
