@@ -70,61 +70,30 @@ class BinarySearchTree {
       }
     }
   }
+
+  breadthFirstSearch() {
+    let data = [];
+    let queue = [];
+    let node = 0;
+
+    queue.push(this.root);
+    while (queue.length) {
+      node = queue.shift();
+      data.push(node);
+    }
+  }
 }
+
 const tree = new BinarySearchTree();
 
 //      10
 //   5     13
 // 2  7  11  16
 
-tree
-  .insert(10)
-  .insert(5)
-  .insert(13)
-  .insert(11)
-  .insert(2)
-  .insert(16)
-  .insert(7)
-  .insert(3);
-console.log(tree);
-
-console.log(tree.find(2));
-console.log(tree.find(23));
-
-// Big O:
-// best : O(log n)
-// avg : O(log n)
-// worst : O(n)
-
-//Steele's Solution:
-// find(value){
-//     if(this.root === null) return false;
-//     var current = this.root,
-//         found = false;
-//     while(current && !found){
-//         if(value < current.value){
-//             current = current.left;
-//         } else if(value > current.value){
-//             current = current.right;
-//         } else {
-//             found = true;
-//         }
-//     }
-//     if(!found) return undefined;
-//     return current;
-// }
-// contains(value){
-//     if(this.root === null) return false;
-//     var current = this.root,
-//         found = false;
-//     while(current && !found){
-//         if(value < current.value){
-//             current = current.left;
-//         } else if(value > current.value){
-//             current = current.right;
-//         } else {
-//             return true;
-//         }
-//     }
-//     return false;
-// }
+console.log(tree.insert(10));
+console.log(tree.insert(5));
+console.log(tree.insert(13));
+console.log(tree.insert(11));
+console.log(tree.insert(2));
+console.log(tree.insert(16));
+console.log(tree.insert(7));
