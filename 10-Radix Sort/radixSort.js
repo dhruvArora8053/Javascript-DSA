@@ -104,7 +104,7 @@ const digitAt = function (num, index) {
     .split("")
     .reverse()
     .slice(index, index + 1)
-    .join("");
+    .join();
 };
 
 console.log(digitAt(-12345, 0));
@@ -113,6 +113,7 @@ console.log(digitAt(12345, 2));
 console.log(digitAt(12345, 3));
 console.log(digitAt(12345, 4));
 console.log(digitAt(12345, 5));
+console.log(digitAt(12345, 6));
 console.log("-----------------------------");
 console.log(digitAt(7323, 0));
 console.log(digitAt(7323, 1));
@@ -130,24 +131,23 @@ console.log(digitCount1(314));
 console.log("--------------------------");
 
 const maxDigitCount1 = function (arr) {
-  let maxDigits = digitCount1(arr[0]);
+  let max = digitCount1(arr[0]);
 
   for (let i = 1; i < arr.length; i++) {
-    if (maxDigits < digitCount1(arr[i])) {
-      maxDigits = digitCount1(arr[i]);
+    if (max < digitCount1(arr[i])) {
+      max = digitCount1(arr[i]);
     }
   }
-  return maxDigits;
+  return max;
 };
 
-console.log(mostDigits([1234, 56, 7]));
-console.log(mostDigits([1, 1, 11111, 1]));
-console.log(mostDigits([12, 34, 56, 78]));
+console.log(maxDigitCount1([1234, 56, 7]));
+console.log(maxDigitCount1([1, 1, 11111, 1]));
+console.log(maxDigitCount1([12, 34, 56, 78]));
 console.log("----------------------------");
 
 const radixSort1 = function (arr) {
   const maxDigits = maxDigitCount1(arr);
-  // console.log(maxDigits);
 
   for (let k = 0; k < maxDigits; k++) {
     let container = Array.from({ length: 10 }, () => []);
