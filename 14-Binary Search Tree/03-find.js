@@ -43,30 +43,56 @@ class BinarySearchTree {
     }
   }
 
-  find(val) {
-    if (!this.root) {
-      return false;
-    }
+  // find(val) {
+  //   if (!this.root) {
+  //     return false;
+  //   }
 
+  //   let current = this.root;
+
+  //   while (true) {
+  //     if (current.val === val) {
+  //       return [true, current];
+  //     } else if (current.val > val) {
+  //       if (current.left) {
+  //         current = current.left;
+  //       } else {
+  //         return false;
+  //       }
+  //     } else if (current.val < val) {
+  //       if (current.right) {
+  //         current = current.right;
+  //       } else {
+  //         return false;
+  //       }
+  //     } else {
+  //       return false;
+  //     }
+  //   }
+  // }
+
+  find(val) {
     let current = this.root;
 
-    while (true) {
-      if (current.val === val) {
-        return [true, current];
-      } else if (current.val > val) {
-        if (current.left) {
-          current = current.left;
+    if (!current) {
+      return false;
+    } else {
+      while (true) {
+        if (val === current.val) {
+          return [true, current];
+        } else if (val > current.val) {
+          if (current.right) {
+            current = current.right;
+          } else {
+            return false;
+          }
         } else {
-          return false;
+          if (current.left) {
+            current = current.left;
+          } else {
+            return false;
+          }
         }
-      } else if (current.val < val) {
-        if (current.right) {
-          current = current.right;
-        } else {
-          return false;
-        }
-      } else {
-        return false;
       }
     }
   }
@@ -89,6 +115,8 @@ tree
 console.log(tree);
 
 console.log(tree.find(2));
+console.log(tree.find(16));
+console.log(tree.find(3));
 console.log(tree.find(23));
 
 // Big O:
@@ -128,3 +156,4 @@ console.log(tree.find(23));
 //     }
 //     return false;
 // }
+

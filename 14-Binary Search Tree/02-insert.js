@@ -13,65 +13,66 @@ class BinarySearchTree {
     this.root = null;
   }
 
-  // insert(val) {
-  //   const newNode = new Node(val);
-
-  //   if (this.root === null) {
-  //     this.root = newNode;
-  //     return this;
-  //   } else {
-  //     let current = this.root;
-  //     while (true) {
-  //       if (val < current.val) {
-  //         if (current.left === null) {
-  //           current.left = newNode;
-  //           return this;
-  //         } else {
-  //           current = current.left;
-  //         }
-  //       } else if (val > current.val) {
-  //         if (current.right === null) {
-  //           current.right = newNode;
-  //           return this;
-  //         } else {
-  //           current = current.right;
-  //         }
-  //       } else {
-  //         return undefined;
-  //       }
-  //     }
-  //   }
-  // }
-
   insert(val) {
-    let newNode = new Node(val);
-    let current = this.root;
+    const newNode = new Node(val);
 
-    if (!current) {
+    if (this.root === null) {
       this.root = newNode;
+      return this;
     } else {
+      let current = this.root;
       while (true) {
-        if (newNode.val > current.val) {
-          if (current.right) {
-            current = current.right;
-          } else {
-            current.right = newNode;
-            return this;
-          }
-        } else if (newNode.val < current.val) {
-          if (current.left) {
-            current = current.left;
-          } else {
+        if (val < current.val) {
+          if (current.left === null) {
             current.left = newNode;
             return this;
+          } else {
+            current = current.left;
+          }
+        } else if (val > current.val) {
+          if (current.right === null) {
+            current.right = newNode;
+            return this;
+          } else {
+            current = current.right;
           }
         } else {
           return undefined;
         }
       }
     }
-    return this;
   }
+
+  //My Solution:-
+  // insert(val) {
+  //   let newNode = new Node(val);
+  //   let current = this.root;
+
+  //   if (!current) {
+  //     this.root = newNode;
+  //   } else {
+  //     while (true) {
+  //       if (newNode.val > current.val) {
+  //         if (current.right) {
+  //           current = current.right;
+  //         } else {
+  //           current.right = newNode;
+  //           return this;
+  //         }
+  //       } else if (newNode.val < current.val) {
+  //         if (current.left) {
+  //           current = current.left;
+  //         } else {
+  //           current.left = newNode;
+  //           return this;
+  //         }
+  //       } else {
+  //         return undefined;
+  //       }
+  //     }
+  //   }
+  //   return this;
+  // }
 }
 
 const tree = new BinarySearchTree();
