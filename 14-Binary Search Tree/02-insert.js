@@ -13,34 +13,64 @@ class BinarySearchTree {
     this.root = null;
   }
 
-  insert(val) {
-    const newNode = new Node(val);
+  // insert(val) {
+  //   const newNode = new Node(val);
 
-    if (this.root === null) {
+  //   if (this.root === null) {
+  //     this.root = newNode;
+  //     return this;
+  //   } else {
+  //     let current = this.root;
+  //     while (true) {
+  //       if (val < current.val) {
+  //         if (current.left === null) {
+  //           current.left = newNode;
+  //           return this;
+  //         } else {
+  //           current = current.left;
+  //         }
+  //       } else if (val > current.val) {
+  //         if (current.right === null) {
+  //           current.right = newNode;
+  //           return this;
+  //         } else {
+  //           current = current.right;
+  //         }
+  //       } else {
+  //         return undefined;
+  //       }
+  //     }
+  //   }
+  // }
+
+  insert(val) {
+    let newNode = new Node(val);
+    let current = this.root;
+
+    if (!current) {
       this.root = newNode;
-      return this;
     } else {
-      let current = this.root;
       while (true) {
-        if (val < current.val) {
-          if (current.left === null) {
-            current.left = newNode;
-            return this;
+        if (newNode.val > current.val) {
+          if (current.right) {
+            current = current.right;
           } else {
-            current = current.left;
-          }
-        } else if (val > current.val) {
-          if (current.right === null) {
             current.right = newNode;
             return this;
+          }
+        } else if (newNode.val < current.val) {
+          if (current.left) {
+            current = current.left;
           } else {
-            current = current.right;
+            current.left = newNode;
+            return this;
           }
         } else {
           return undefined;
         }
       }
     }
+    return this;
   }
 }
 
@@ -57,10 +87,10 @@ console.log(tree.insert(11));
 console.log(tree.insert(2));
 console.log(tree.insert(16));
 console.log(tree.insert(7));
-console.log(tree.insert(3));
+// console.log(tree.insert(3));
 
-console.log(tree.insert(3));
-console.log(tree.insert(7));
+// console.log(tree.insert(3));
+// console.log(tree.insert(7));
 
 // Refactored Solution
 // class BinarySearchTree {

@@ -34,11 +34,20 @@ console.log(mergeArrays([1, 2], [3, 6]));
 console.log(mergeArrays([1], [7, 76]));
 console.log(mergeArrays([43], []));
 
-// console.log(mergeSort([2, 1, 9, 76, 4]));
-// console.log(mergeSort([42, 33, 11]));
-// console.log(mergeSort([37, 45, 29, 8]));
-// console.log(mergeSort([1, 37, 44, 21, 4, 3, 15, 7]));
-// console.log(mergeSort([8, 1, 2, 3, 4, 5, 6, 7]));
-// console.log(mergeSort([-8, 1, 2, -3, 4, -5, 6, 7]));
-// console.log(mergeSort([-23, -333, -400, 12, 1, 2, 3, 44, -233]));
-// console.log(mergeSort([23, 2, 1, 9, 17, 345, 8, 12, 14, 5476, 2345, 9852]));
+// const arrayBreak = function (arr, start = 0, end = arr.length - 1) {
+//   if (start === end) {
+//     let mid = Math.floor((start + end) / 2);
+//     //left
+//     arrayBreak(start, mid);
+//     arrayBreak(mid + 1, end);
+//   }
+// };
+
+console.log(arrayBreak([2, 1, 9, 76, 4]));
+console.log(arrayBreak([42, 33, 11]));
+console.log(arrayBreak([37, 45, 29, 8]));
+console.log(arrayBreak([1, 37, 44, 21, 4, 3, 15, 7]));
+console.log(arrayBreak([8, 1, 2, 3, 4, 5, 6, 7]));
+console.log(arrayBreak([-8, 1, 2, -3, 4, -5, 6, 7]));
+console.log(arrayBreak([-23, -333, -400, 12, 1, 2, 3, 44, -233]));
+console.log(arrayBreak([23, 2, 1, 9, 17, 345, 8, 12, 14, 5476, 2345, 9852]));
