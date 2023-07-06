@@ -117,9 +117,9 @@ class BinarySearchTree {
     let current = this.root;
 
     const traverse = function (node) {
-      if (node.left) traverse(node.left);
+      node.left && traverse(node.left);
       data.push(node.val);
-      if (node.right) traverse(node.right);
+      node.right && traverse(node.right);
     };
     traverse(current);
     return data;
