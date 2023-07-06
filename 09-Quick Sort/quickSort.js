@@ -76,3 +76,10 @@ console.log(quickSort([-8, 1, 2, -3, 4, -5, 6, 7]));
 console.log(quickSort([23, 2, 1, 9, 17, 345, 8, 12, 14, 5476, 2345, 9852]));
 console.log(quickSort([-23, -333, -400, 12, 1, 2, 3, 44, -233]));
 console.log(quickSort([23, 2, 1, 9, 17, 345, 8, 12, 14, 5476, 2345, 9852]));
+
+//Big O:
+//Time Best  --> O(n log n)
+//Time Avg   --> O(n log n)
+//Time Worst --> O(n**2)
+
+//Space      --> O(log n)
