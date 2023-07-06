@@ -30,19 +30,18 @@ console.log(pivot([23, 2, 1, 9, 17, 345, 8, 12, 14, 5476, 2345, 9852]));
 console.log(pivot([-23, -333, -400, 12, 1, 2, 3, 44, -233]));
 console.log("--------------------------------");
 
-const pivot1 = function (arr, start = 0, end = arr.length) {
-  let pivot = arr[start];
+const pivot1 = function (arr, start = 0, end = arr.length - 1) {
+  const pivot = arr[start];
   let pivotIndex = start;
 
   for (let i = 1; i < arr.length; i++) {
     if (pivot > arr[i]) {
       pivotIndex++;
-      swap(arr, pivotIndex, i);
+      swap(arr, i, pivotIndex);
     }
   }
-
   swap(arr, start, pivotIndex);
-  return pivotIndex;
+  return [arr, pivotIndex];
 };
 
 console.log(pivot1([9, 2, 1, 76, 4]));
@@ -53,12 +52,5 @@ console.log(pivot1([8, 1, 2, 3, 4, 5, 6, 7]));
 console.log(pivot1([-8, 1, 2, -3, 4, -5, 6, 7]));
 console.log(pivot1([23, 2, 1, 9, 17, 345, 8, 12, 14, 5476, 2345, 9852]));
 console.log(pivot1([-23, -333, -400, 12, 1, 2, 3, 44, -233]));
+console.log(pivot1([23, 2, 1, 9, 17, 345, 8, 12, 14, 5476, 2345, 9852]));
 console.log("--------------------------------");
-
-const quickSort = function (arr) {
-  const pivot = pivot1(arr);
-  const left = quickSort(arr.slice(0, pivot));
-  const right = quickSort(arr.slice(pivot + 1, arr.length));
-};
-
-console.log(quickSort([23, 2, 1, 9, 17, 345, 8, 12, 14, 5476, 2345, 9852]));
