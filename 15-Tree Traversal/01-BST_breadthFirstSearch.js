@@ -97,3 +97,9 @@ tree.insert(10).insert(6).insert(15).insert(3).insert(8).insert(2).insert(7);
 console.log(tree);
 
 console.log(tree.breadthFirstSearch());
+
+const arr = [1, 2, 3];
+const k = [];
+
+k.push(arr.shift());
+console.log(k);

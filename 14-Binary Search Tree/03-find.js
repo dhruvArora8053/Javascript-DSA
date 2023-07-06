@@ -43,59 +43,59 @@ class BinarySearchTree {
     }
   }
 
-  // find(val) {
-  //   if (!this.root) {
-  //     return false;
-  //   }
-
-  //   let current = this.root;
-
-  //   while (true) {
-  //     if (current.val === val) {
-  //       return [true, current];
-  //     } else if (current.val > val) {
-  //       if (current.left) {
-  //         current = current.left;
-  //       } else {
-  //         return false;
-  //       }
-  //     } else if (current.val < val) {
-  //       if (current.right) {
-  //         current = current.right;
-  //       } else {
-  //         return false;
-  //       }
-  //     } else {
-  //       return false;
-  //     }
-  //   }
-  // }
-
   find(val) {
+    if (!this.root) {
+      return false;
+    }
+
     let current = this.root;
 
-    if (!current) {
-      return false;
-    } else {
-      while (true) {
-        if (val === current.val) {
-          return [true, current];
-        } else if (val > current.val) {
-          if (current.right) {
-            current = current.right;
-          } else {
-            return false;
-          }
+    while (true) {
+      if (current.val === val) {
+        return [true, current];
+      } else if (current.val > val) {
+        if (current.left) {
+          current = current.left;
         } else {
-          if (current.left) {
-            current = current.left;
-          } else {
-            return false;
-          }
+          return false;
         }
+      } else if (current.val < val) {
+        if (current.right) {
+          current = current.right;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
       }
     }
   }
+
+  // find(val) {
+  //   let current = this.root;
+
+  //   if (!current) {
+  //     return false;
+  //   } else {
+  //     while (true) {
+  //       if (val === current.val) {
+  //         return [true, current];
+  //       } else if (val > current.val) {
+  //         if (current.right) {
+  //           current = current.right;
+  //         } else {
+  //           return false;
+  //         }
+  //       } else {
+  //         if (current.left) {
+  //           current = current.left;
+  //         } else {
+  //           return false;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }
 const tree = new BinarySearchTree();
 
