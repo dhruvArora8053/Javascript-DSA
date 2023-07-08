@@ -15,4 +15,12 @@ class HashTable {
     }
     return total;
   }
+
+  set(key, value) {
+    let index = this._hash(key);
+    return index;
+  }
 }
+
+let ht = new HashTable();
+console.log(ht.set("hello world", "goodbye!!"));
