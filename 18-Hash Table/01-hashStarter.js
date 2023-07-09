@@ -24,3 +24,4 @@ class HashTable {
 
 let ht = new HashTable();
 console.log(ht.set("hello world", "goodbye!!"));
+
