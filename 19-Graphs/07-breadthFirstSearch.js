@@ -83,6 +83,7 @@ class Graph {
       result.push(currentVertex);
 
       this.adjacencyList[currentVertex].forEach((neighbour) => {
+        //to reverse the order--> add .slice().reverse() before forEach
         if (!visited[neighbour]) {
           visited[neighbour] = true;
           queue.push(neighbour);
