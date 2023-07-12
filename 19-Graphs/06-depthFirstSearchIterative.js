@@ -51,19 +51,24 @@ class Graph {
   }
 
   DFSIterative(start) {
-    const stack = [];
+    const stack = [start];
     const result = [];
     const visited = {};
+    let currentVertex;
 
-    stack.push(start);
     visited[start] = true;
+    while (stack.length) {
+      currentVertex = stack.pop();
+      result.push(currentVertex);
 
-    while (stack.length > 0) {
-      const node = stack.pop();
-      if (!visited[node]) {
-        visited[node] = true;
-      }
+      this.adjacencyList[currentVertex].forEach((neighbour) => {
+        if (!visited[neighbour]) {
+          visited[neighbour] = true;
+          stack.push(neighbour);
+        }
+      });
     }
+    return result;
   }
 }
 
@@ -93,3 +98,4 @@ console.log(g);
 //          F
 
 console.log(g.DFSRecursive("A"));
+console.log(g.DFSIterative("A"));
