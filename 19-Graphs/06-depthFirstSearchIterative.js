@@ -49,6 +49,22 @@ class Graph {
 
     return result;
   }
+
+  DFSIterative(start) {
+    const stack = [];
+    const result = [];
+    const visited = {};
+
+    stack.push(start);
+    visited[start] = true;
+
+    while (stack.length > 0) {
+      const node = stack.pop();
+      if (!visited[node]) {
+        visited[node] = true;
+      }
+    }
+  }
 }
 
 const g = new Graph();
