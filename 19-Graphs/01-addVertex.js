@@ -5,7 +5,11 @@ class Graph {
     this.adjacencyList = {};
   }
 
-  addVertext(vertex) {
-    this.adjacencyList.vertex = [];
+  addVertex(vertex) {
+    if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = [];
   }
 }
+
+const g = new Graph();
+g.addVertex("Tokyo");
+console.log(g);
