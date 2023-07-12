@@ -19,18 +19,33 @@ class Graph {
     this.adjacencyList[v1] = this.adjacencyList[v1].filter((v) => v !== v2);
     this.adjacencyList[v2] = this.adjacencyList[v2].filter((v) => v !== v1);
   }
+
+  removeVertex(vertex) {
+    let remove = this.adjacencyList[vertex];
+
+    for (let i = 0; i < remove.length; i++) {
+      this.removeEdge(remove[i], vertex);
+    }
+
+    delete this.adjacencyList[vertex];
+  }
 }
 
 const g = new Graph();
 g.addVertex("Tokyo");
 g.addVertex("Dallas");
 g.addVertex("Aspen");
+g.addVertex("Hong Kong");
+g.addVertex("Los Angeles");
 
 g.addEdge("Tokyo", "Dallas");
+g.addEdge("Tokyo", "Hong Kong");
 g.addEdge("Dallas", "Aspen");
-g.addEdge("Tokyo", "Aspen");
+g.addEdge("Dallas", "Hong Kong");
+g.addEdge("Dallas", "Los Angeles");
+g.addEdge("Hong Kong", "Los Angeles");
+g.addEdge("Aspen", "Los Angeles");
 console.log(g);
 
-g.removeEdge("Tokyo", "Dallas");
-g.removeEdge("Aspen", "Dallas");
-console.log(g);
+g.removeVertex("Hong Kong");
+g.removeVertex("Aspen");
