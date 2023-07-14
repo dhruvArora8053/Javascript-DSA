@@ -64,13 +64,16 @@ class HashTable {
   }
 
   values() {
-    const keys = [];
+    const values = [];
     for (let i = 0; i < this.keyMap.length; i++) {
       for (let j = 0; j < this.keyMap[i].length; j++) {
-        keys.push(this.keyMap[i][j][1]);
+        //checking for unique values
+        if (!values.includes(this.keyMap[i][j][1])) {
+          values.push(this.keyMap[i][j][1]);
+        }
       }
     }
-    return keys;
+    return values;
   }
 }
 
@@ -81,6 +84,8 @@ console.log(ht.set("cats", "are fine"));
 console.log(ht.set("i love", "pizza"));
 console.log(ht.set("hi", "bye"));
 console.log(ht.set("french", "fries"));
+console.log(ht.set("german", "fries"));
+console.log(ht.set("india", "fries"));
 console.log(ht);
 
 console.log(ht.keys());
