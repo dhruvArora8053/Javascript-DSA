@@ -21,6 +21,7 @@ console.log(containsDuplicate([1, 2, 3, 1]));
 console.log(containsDuplicate([1, 2, 3, 4]));
 console.log(containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]));
 console.log(containsDuplicate([23, 2, 3, 4, 5, 23]));
+console.log("****************************");
 
 //Big O --> time: O(n**2)
 //          space: O(1)
@@ -30,81 +31,37 @@ console.log(containsDuplicate([23, 2, 3, 4, 5, 23]));
 //Big O --> time: O(n logn)
 //          space: O(1)
 
+const containsDuplicate1 = function (arr) {
+  arr.sort((a, b) => a - b);
+  let containes = false;
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] === arr[i + 1]) containes = true;
+  }
+  return containes;
+};
+
+console.log(containsDuplicate1([1, 2, 3, 1]));
+console.log(containsDuplicate1([1, 2, 3, 4]));
+console.log(containsDuplicate1([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]));
+console.log(containsDuplicate1([23, 2, 3, 4, 5, 23]));
+console.log("****************************");
+
 //3rd More Optimized Solution:
 //compare each element with it's neighbour after sorting
 //Big O --> time: O(n)
 //          space: O(n)
+const containsDuplicate3 = function (nums) {
+  const numsSet = new Set();
 
-
-/**
- * Brute Force - Linear Search
- * Time O(N^2) | Space O(1)
- * https://leetcode.com/problems/contains-duplicate/
- * @param {number[]} nums
- * @return {boolean}
- */
-var containsDuplicate = (nums) => {
-  for (let right = 0; right < nums.length; right++) {/* Time O(N) */
-      for (let left = 0; left < right; left++) {         /* Time O(N) */
-          const isDuplicate = nums[left] === nums[right];
-          if (isDuplicate) return true;
-      }
+  for (const num of nums) {
+    if (numsSet.has(num)) return true;
+    numsSet.add(num);
   }
-
-  return false;
-}
-
-/**
-* Sort - HeapSort Space O(1) | QuickSort Space O(log(N))
-* Time O(N * log(N)) | Space O(1)
-* https://leetcode.com/problems/contains-duplicate/
-* @param {number[]} nums
-* @return {boolean}
-*/
-var containsDuplicate = (nums) => {
-  nums.sort((a, b) => a - b);/* Time O(N * log(N)) | Space O(1 || log(N)) */
-
-  return hasDuplicate(nums);
-}
-
-const hasDuplicate = (nums) => {
-  for (let curr = 0; curr < (nums.length - 1); curr++) {/* Time O(N) */
-      const next = (curr + 1);
-
-      const isNextDuplicate = nums[curr] === nums[next];
-      if (isNextDuplicate) return true;
-  }
-
-  return false;
-}
-
-/**
-* Hash Set
-* Time O(N) | Space O(N)
-* https://leetcode.com/problems/contains-duplicate/
-* @param {number[]} nums
-* @return {boolean}
-*/
-var containsDuplicate = (nums) => {
-  const numsSet = new Set(nums);/* Time O(N) | Space O(N) */
-  const isEqual = numsSet.size === nums.length;
-
-  return !isEqual;
-};
-
-/**
-* Hash Set - Early Exit
-* Time O(N) | Space O(N)
-* https://leetcode.com/problems/contains-duplicate/
-* @param {number[]} nums
-* @return {boolean}
-*/
-var containsDuplicate = (nums, numsSet = new Set()) => {
-  for (const num of nums) {/* Time O(N) */
-      if (numsSet.has(num)) return true;
-
-      numsSet.add(num);       /* Space O(N) */
-  }
-
   return false;
 };
+
+console.log(containsDuplicate3([1, 2, 3, 1]));
+console.log(containsDuplicate3([1, 2, 3, 4]));
+console.log(containsDuplicate3([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]));
+console.log(containsDuplicate3([23, 2, 3, 4, 5, 23]));
