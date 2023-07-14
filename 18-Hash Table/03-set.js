@@ -2,7 +2,7 @@
 
 //simple hash function:
 class HashTable {
-  constructor(size = 53) {
+  constructor(size = 4) {
     this.keyMap = new Array(size);
   }
 
@@ -30,3 +30,10 @@ class HashTable {
 
 let ht = new HashTable();
 console.log(ht.set("hello world", "goodbye!!"));
+console.log(ht.set("dogs", "are cool"));
+console.log(ht.set("cats", "are fine"));
+console.log(ht.set("i love", "pizza"));
+console.log(ht.set("hi", "bye"));
+console.log(ht.set("french", "fries"));
+console.log(ht);
+ 
