@@ -48,3 +48,4 @@ const validAnagram1 = function (s, t) {
 console.log(validAnagram1("anagram", "nagaram"));
 console.log(validAnagram("rat", "car"));
 console.log(validAnagram("aacc", "ccac"));
+
