@@ -41,4 +41,3 @@ const countDown1 = function (n) {
 };
 
 countDown1(5);
-

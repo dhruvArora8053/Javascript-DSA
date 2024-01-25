@@ -4,7 +4,7 @@
 // new input
 
 const countNumber = function (n) {
-  if (n === 0) {
+  if (n <= 0) {
     console.log("All Done!");
     return;
   }
