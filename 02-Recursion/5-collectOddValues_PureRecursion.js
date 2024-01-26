@@ -37,20 +37,17 @@ console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 // console.log(a.concat(b).concat(c).concat(d));
 
 const collectOddValues1 = function (arr) {
-  const oddArr = [];
+  let newArr = [];
 
-  //base condtion
-  if (arr.length === 0) {
-    return [];
-  }
+  // base condition
+  if (arr.length === 0) return [];
 
-  //action
-  if (arr[0] % 2 !== 0) {
-    oddArr.push(arr[0]);
-  }
+  // action
+  if (arr[0] % 2 !== 0) newArr.push(arr[0]);
 
-  //different input + call again
-  return oddArr.concat(collectOddValues1(arr.slice(1)));
+  // different input + call again
+  const result = newArr.concat(collectOddValues1(arr.slice(1)));
+  return result;
 };
 
 console.log(collectOddValues1([1, 2, 3, 4, 5, 6, 7, 8, 9]));
