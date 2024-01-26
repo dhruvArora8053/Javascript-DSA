@@ -11,13 +11,16 @@ const factorial = function (num) {
 
 console.log(factorial(1));
 
+//////////////////////////////////////
+
 const factorial1 = function (num) {
   // badc -->
 
   //base condition
   if (num === 1) return 1;
 
+  // action, different input, call again
   return num * factorial1(num - 1);
 };
 
-console.log(factorial1(2));
+console.log(factorial1(4));
