@@ -20,7 +20,7 @@ const binarySearch = function (arr, val) {
   return -1;
 };
 
-console.log(binarySearch([12, 34, 56, 68, 90, 91, 94, 96, 100], 68));
+console.log(binarySearch([12, 34, 56, 68, 90, 91, 94, 96, 100], 100));
 
 //points:-
 // while(start<=end)
@@ -55,20 +55,16 @@ console.log(binarySearch([12, 34, 56, 68, 90, 91, 94, 96, 100], 68));
 const binarySearch1 = function (arr, item) {
   let start = 0;
   let end = arr.length - 1;
+  let mid;
 
   while (start <= end) {
     mid = Math.floor((start + end) / 2);
 
-    if (arr[mid] === item) {
-      return mid;
-    } else if (arr[mid] < item) {
-      start = mid + start;
-    } else {
-      end = mid - 1;
-    }
+    if (arr[mid] === item) return mid;
+    else if (arr[mid] < item) start = mid + 1;
+    else end = mid - 1;
   }
-
   return -1;
 };
 
-console.log(binarySearch([12, 34, 56, 68, 90, 91, 94, 96, 100], 100));
+console.log(binarySearch1([12, 34, 56, 68, 90, 91, 94, 96, 100],100));
