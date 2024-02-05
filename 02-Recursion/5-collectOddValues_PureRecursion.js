@@ -21,7 +21,7 @@ const collectOddValues = function (arr) {
 
 console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
-//helper method: uses new method so that the declared data structer do not get declared everytime as a fresh one
+//helper method: uses new method so that the declared data structure do not get declared everytime as a fresh one
 
 //pure recursion: uses loop to stop the declaration of data structure until the condtion is met and when that condition is met we probably have our input ready
 
@@ -40,7 +40,7 @@ const collectOddValues1 = function (arr) {
   let newArr = [];
 
   // base condition
-  if (arr.length === 0) return [];
+  if (arr.length === 0) return newArr;
 
   // action
   if (arr[0] % 2 !== 0) newArr.push(arr[0]);
