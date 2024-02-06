@@ -68,7 +68,6 @@ console.log(naiveStringSearch2("lorie loled", "pop"));
 
 console.log("----------------------------");
 
-
 // My Solution Once Again:-
 const naiveStringSearch3 = function (str, pattern) {
   let count = 0;
