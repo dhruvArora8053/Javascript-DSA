@@ -27,20 +27,21 @@ console.log(selectionSort([-8, 1, 2, -3, 4, -5, 6, 7]));
 //Big O: best - n**2 || worst - n**2
 //space complexity - O(1)
 
+console.log("---------------------------------");
+
 const selectionSort1 = function (arr) {
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length - 1; i++) {
     let min = i;
-    for (var j = i + 1; j < arr.length; j++) {
-      if (arr[min] > arr[j]) {
-        min = j;
-      }
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[min]) min = j;
     }
     if (min !== i) {
-      let temp = arr[min];
-      arr[min] = arr[i];
-      arr[i] = temp;
+      const temp = arr[i];
+      arr[i] = arr[min];
+      arr[min] = temp;
     }
   }
+
   return arr;
 };
 
