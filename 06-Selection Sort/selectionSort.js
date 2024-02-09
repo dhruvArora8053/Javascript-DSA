@@ -11,7 +11,7 @@ const selectionSort = function (arr) {
     }
     //optimization
     if (min !== i) {
-      let temp = arr[i];
+      const temp = arr[i];
       arr[i] = arr[min];
       arr[min] = temp;
     }
@@ -41,7 +41,6 @@ const selectionSort1 = function (arr) {
       arr[min] = temp;
     }
   }
-
   return arr;
 };
 
